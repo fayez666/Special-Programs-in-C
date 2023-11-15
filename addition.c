@@ -24,6 +24,7 @@ int main()
     printf("The sum is %d", x);
     return 0;
 }
+//negative numbers
 
 int main()
 {
@@ -86,5 +87,31 @@ int main()
 
         printf("You have entered imaginary number ");
 
+    return 0;
+}
+//another method
+/*
+Idea is to use Half Adder logic.
+
+Half Adder logic:
+sum = x ^ y
+carry = x & y
+
+*/
+int main(){
+    int x, y, sum, carry;
+    printf("Enter two numbers: ");
+    scanf("%d%d", &x, &y);
+    sum = x ^ y;
+    carry = x & y;
+    while (carry != 0)
+    {
+        carry = carry << 1;
+        x = sum;
+        y = carry;
+        sum = x ^ y;
+        carry = x & y;
+    }
+    printf("The sum is %d", sum);
     return 0;
 }
